@@ -21,7 +21,7 @@ pipeline {
         stage('Build docker images') {
             steps {
                 script{
-                    sh  'docker build -t llyod-$BUILD_NUMBER .'
+                    sh  'docker build -t 2222s/llyod-$BUILD_NUMBER .'
                 }
             }
         }
@@ -32,7 +32,6 @@ pipeline {
                     sh 'docker login -u 2222s -p ${dockerhubpwd}'
      
 }                   
-                    sh 'docker tag lloyd 2222s/llyod-$BUILD_NUMBER:latest'
                     sh 'docker push  2222s/llyod-$BUILD_NUMBER:latest'
                 }
             }
