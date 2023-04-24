@@ -21,14 +21,18 @@ pipeline {
         stage('Build docker images') {
             steps {
                 script{
-                    sh  'docker build -t 2222s/llyod-$BUILD_NUMBER .'
+                    sh  'docker build -t llyod-$BUILD_NUMBER .'
                 }
             }
         }
         stage('Push docker images to dockerhub') {
             steps {
                 script{
-                     sh 'docker push  2222s/llyod-$BUILD_NUMBER:latest'
+                    withCredentials([string(credentialsId: 'dockerhubpwd', variable: 'dockerhubpwd')]) {
+                    sh 'docker login -u 2222s -p ${dockerhubpwd}'
+     
+} 
+                    sh 'docker push  2222s/llyod-$BUILD_NUMBER:latest'
                 }
             }
         }
