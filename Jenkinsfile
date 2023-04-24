@@ -28,7 +28,6 @@ pipeline {
         stage('Push docker images to dockerhub') {
             steps {
                 script{
-                    sh 'docker tag lloyd 2222s/llyod-$BUILD_NUMBER:latest'
                     sh 'dokcer push 2222s/llyod-$BUILD_NUMBER:latest'
                 }
             }
