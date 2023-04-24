@@ -7,7 +7,7 @@ pipeline {
                 git 'https://github.com/Anudeepkumar02/llyod.git'
             }
         }
-        stage('Hello') {
+        stage('Build') {
             steps {
                 sh 'mvn clean package'
             }
