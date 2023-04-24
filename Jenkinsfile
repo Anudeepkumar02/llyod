@@ -28,8 +28,8 @@ pipeline {
         stage('Push docker images to dockerhub') {
             steps {
                 script{
-                    sh 'docker tag lloyd 2222s/llyod:l.0 '
-                    sh 'dokcer push 2222s/lloyd:1.0'
+                    sh 'docker tag lloyd 2222s/llyod-1.0:latest'
+                    sh 'dokcer push 2222s/llyod-1.0:latest'
                 }
             }
         }
