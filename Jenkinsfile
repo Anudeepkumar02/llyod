@@ -28,7 +28,7 @@ pipeline {
         stage('Push docker images to dockerhub') {
             steps {
                 script{
-                    sh 'dokcer push 2222s/llyod-$BUILD_NUMBER:latest'
+                    sh 'docker push 2222s/llyod-$BUILD_NUMBER:latest'
                 }
             }
         }
