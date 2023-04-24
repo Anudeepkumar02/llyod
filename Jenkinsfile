@@ -32,7 +32,7 @@ pipeline {
                     sh 'docker login -u 2222s -p ${dockerhubpwd}'
      
 }                   
-                    sh 'docker tag 2222s/llyod-$BUILD_number:latest'
+                    sh 'docker tag lloyd 2222s/llyod-$BUILD_NUMBER:latest'
                     sh 'docker push  2222s/llyod-$BUILD_NUMBER:latest'
                 }
             }
