@@ -21,15 +21,15 @@ pipeline {
         stage('Build docker images') {
             steps {
                 script{
-                    sh  'docker build -t llyod .'
+                    sh  'docker build -t llyod-$BUILD_NUMBER .'
                 }
             }
         }
         stage('Push docker images to dockerhub') {
             steps {
                 script{
-                    sh 'docker tag lloyd 2222s/llyod-1.0:latest'
-                    sh 'dokcer push 2222s/llyod-1.0:latest'
+                    sh 'docker tag lloyd 2222s/llyod-$BUILD_NUMBER:latest'
+                    sh 'dokcer push 2222s/llyod-$BUILD_NUMBER:latest'
                 }
             }
         }
