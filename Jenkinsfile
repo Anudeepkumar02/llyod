@@ -33,7 +33,7 @@ pipeline {
      
 }                   
              
-                    sh 'docker push 2222s/ llyod:$BUILD_NUMBER'
+                    sh 'docker push 2222s/llyod:$BUILD_NUMBER'
 
                 }
             }
